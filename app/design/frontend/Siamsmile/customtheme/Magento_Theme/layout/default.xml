@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/siamsmile-logo.svg</argument>
+                <argument name="logo_alt" xsi:type="string">SiamSmile</argument>
+                <argument name="logo_img_width" xsi:type="number">250</argument>
+                <argument name="logo_img_height" xsi:type="string">45</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock name="content">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="siam.smile.content.container"
+                   template="SiamsmileTheme::content.phtml" />
+        </referenceBlock>
+
+        <referenceBlock name="copyright" remove="true" />
+        <referenceBlock name="my-account-link" remove="true" />
+        <referenceBlock name="catalog.compare.link" remove="true" />
+        <referenceBlock name="wish-list-link" remove="true" />
+        <referenceBlock name="advanced-search-link" remove="true" />
+        <!-- <referenceBlock name="form.subscribe" remove="true" /> -->
+        <referenceBlock name="report.bugs" remove="true" />
+        <referenceBlock name="footer_links" remove="true" />
+
+        <referenceBlock name="top.link">
+            <block class="Magento\Theme\Block\Html\Header" name="header.other" as="header.other">
+                <arguments>
+                    <argument name="show_part" xsi:type="string">other</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <referenceBlock name="footer">
+            <container name="siam_smile_footer_links_container" label="Siamsmile Footer Links" htmlTag="div" htmlClass="links" before="footer_links" />
+
+            <container name="siam_smile_footer_links_container2" label="Siamsmile Footer Links 2" htmlTag="div" htmlClass="links" after="siam_smile_footer_links_container" />
+        </referenceBlock>
+
+        <referenceContainer name="siam_smile_footer_links_container">
+            <block class="Magento\Framework\View\Element\Template" name="quick-links" template="SiamsmileTheme::footer/links/column1.phtml" />
+            <block class="Magento\Framework\View\Element\Html\Links" name="siamsmile_footer_links_column1" after="quick-links">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">footer links column1</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="siam_smile_footer_links_container2">
+            <block class="Magento\Framework\View\Element\Template" name="make-money-with-us" template="SiamsmileTheme::footer/links/column2.phtml" />
+            <block class="Magento\Framework\View\Element\Html\Links" name="siamsmile_footer_links_column2">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">footer links column2</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceBlock name="siamsmile_footer_links_column1">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="search-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Search</argument>
+                    <argument name="path" xsi:type="string">search</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="contact-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Contact</argument>
+                    <argument name="path" xsi:type="string">contact</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="about-siamsmile-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">About US</argument>
+                    <argument name="path" xsi:type="string">about-us</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="news-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">News</argument>
+                    <argument name="path" xsi:type="string">investor-news</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="faq-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">FAQ</argument>
+                    <argument name="path" xsi:type="string">siamsmile-faq</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>
